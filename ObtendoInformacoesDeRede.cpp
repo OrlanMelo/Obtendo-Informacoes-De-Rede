@@ -35,7 +35,7 @@ public:
 			for (int i = 0; i < Resultado->AddressLength; i++)
 			{
 				cout << "GUID: " << Resultado[i].AdapterName << '\n';
-				cout << "Endereço: " << Resultado[i].IpAddressList.IpAddress.String << '\n';
+				cout << "EndereÃ§o: " << Resultado[i].IpAddressList.IpAddress.String << '\n';
 				cout << "Index: " << Resultado[i].Index << '\n';
 
 				switch (Resultado[i].Type)
@@ -60,9 +60,13 @@ public:
 				}
 
 				if (Resultado[i].DhcpEnabled)
+				{
 					cout << "Servidor DHCP: " << Resultado[i].DhcpServer.IpAddress.String << '\n';
+				}
 				else
+				{
 					cout << "Servidor DHCP: Desativado" << '\n';
+				}
 
 				cout << "Dispositivo: " << Resultado[i].Description << '\n' << '\n';
 			}
@@ -72,7 +76,7 @@ public:
 		}
 		else
 		{
-			cout << "Ocorreu um erro ao obter informações, veja o código de erro: " << GetLastError();
+			cout << "Ocorreu um erro ao obter informaÃ§Ãµes, veja o cÃ³digo de erro: " << GetLastError();
 		}
 	}
 
@@ -80,7 +84,7 @@ public:
 
 int main()
 {
-	cout << "O assistente está verificando propriedades de adaptador de rede...";
+	cout << "O assistente estÃ¡ verificando propriedades de adaptador de rede...";
 
 	Funcoes.ObterInformacoesDeRede();
 
